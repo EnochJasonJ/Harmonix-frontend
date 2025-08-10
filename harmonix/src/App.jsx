@@ -9,6 +9,7 @@ import AttendancePage from './pages/AttendancePage';
 import EventPage from './pages/EventPage';
 import EventsPage from './pages/EventsPage';
 import BandMembers from './pages/BandMembers';
+import ResetPasswordPage from './pages/ResetPasswordPage';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("access") !== null);
