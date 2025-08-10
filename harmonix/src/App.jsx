@@ -23,6 +23,7 @@ function App() {
     <BrowserRouter>
     <Navbar setIsLoggedIn={setIsLoggedIn} />
       <Routes>
+        <Route path="/" element={<HomePage />}></Route>
         <Route path="/login" element={isLoggedIn ? <Navigate to="/" /> : <LoginForm setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/attendance" element = {<AttendancePage></AttendancePage>} />
         <Route path="/events" element = {<EventsPage></EventsPage>} />
