@@ -1,1 +1,24 @@
 @import "tailwindcss";
+input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px white inset !important;
+    -webkit-text-fill-color: black !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input{
+    outline: none;
+}
+
+.frm{
+    box-shadow: 0 0 5px rgb(100, 2, 124);
+}
+
+.color-empty {
+  fill: #ebedf0;
+}
+.color-attended {
+  fill: #20ba49; /* green like GitHub */
+}
+.color-absent {
+  fill: #fcd4d8; /* red for absences */
+}

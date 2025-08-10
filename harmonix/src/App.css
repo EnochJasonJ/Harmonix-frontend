@@ -40,3 +40,16 @@
 .read-the-docs {
   color: #888;
 }
+
+/* React Calendar Heatmap Styles */
+.react-calendar-heatmap .color-empty {
+  fill: #eeeeee;
+}
+
+.react-calendar-heatmap .color-attended {
+  fill: #4caf50; /* Green */
+}
+
+.react-calendar-heatmap .color-absent {
+  fill: #f44336; /* Red */
+}
