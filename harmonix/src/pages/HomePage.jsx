@@ -56,7 +56,7 @@ function HomePage() {
             {/* Example event cards */}
             <div className="bg-gray-300 p-4 rounded-lg shadow-lg">
               <h3 className="font-semibold text-black text-lg mb-2">Independence Day Celebration</h3>
-              <p className="text-sm text-[#141414]">Aug 15, College Pathway</p>
+              <p className="text-sm text-[#141414]">Aug 15, OAT</p>
             </div>
             <div className="bg-gray-300 p-4 rounded-lg shadow-lg">
               <h3 className="font-semibold text-black text-lg mb-2">Flashmob</h3>

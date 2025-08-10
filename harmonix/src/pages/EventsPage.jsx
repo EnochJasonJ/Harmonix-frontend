@@ -1,59 +1,78 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
+import React from "react";
 
 function EventsPage() {
-    const [data, setData] = useState(null);
-    const fetchData = async () => {
-        const accessToken = localStorage.getItem("access");
-        try {
-            const response = await axios.get("https://harmonix-backend.onrender.com/events/", {
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${accessToken}`
-                }
-            })
-            if (response.status === 200) {
-                setData(response.data);
-            }
-            console.log("Data fetched successfully:", response.data);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
-    }
-    useEffect(() => {
-        fetchData();
-    }, []);
-    return (
-        <div>
-            <h1 className='text-3xl font-bold my-5 text-center'>Events Page</h1>
-            {data && Array.isArray(data) && data.length > 0 ? (
-                <div className='flex flex-col items-center justify-center gap-5'>
-                    {data.map((element, index) => (
-                        <div key={index} className='bg-gray-100 hover:bg-[#535353] hover:text-[#adf0d5] hover:scale-105 hover:my-5 transition-all duration-700 ease-in-out p-4 px-5 rounded-lg mb-4 w-[400px]'>
-                            <div className='flex flex-row items-center justify-between mb-2'>
-                                <h1 className='font-bold'>Event Name:</h1>
-                                <h1 className='mr-5'>{element.name}</h1>
-                            </div>
-                            <div className='flex flex-row items-center justify-between mb-2'>
-                                <h1 className='font-bold'>Members Participated:</h1>
-                                <h1 className='mr-5'>
-                                    {(!element.first_name && !element.last_name)
-                                        ? element.username
-                                        : `${element.first_name || ''} ${element.last_name || ''}`.trim()}
-                                </h1>
-                            </div>
-                            <div className='flex flex-row items-center justify-between mb-2'>
-                                <h1 className='font-bold'>Date:</h1>
-                                <h2 className='mr-5'>{new Date(element.date).toLocaleDateString()}</h2>
-                            </div>
+    const eventDetails = {
+        "Dhrona": "Our college's biggest cultural event featuring music, dance, and performances from across the campus.",
+        "Thiran": "Our flagship inter-college event, launched this February, where students from various colleges participate in competitions.",
+        "Pongal Celebration": "Celebrating Pongal, the traditional festival of Tamil Nadu, with music, dance, and cultural activities.",
+        "Independence Day Celebration": "Marking India's Independence with flag hoisting, patriotic performances, and tributes.",
+        "Flashmob": "A surprise entertainment event to uplift students’ spirits and provide a fun stress-buster.",
+        "Freshwarites": "A special event for first-year students to showcase talents and join various clubs like Fine Arts.",
+        "Christmas Eve": "Celebrating the joy of Christmas with music, decorations, and festive cheer.",
+        "Alumni Meet": "A nostalgic reunion for our college alumni to reconnect and share memories.",
+        "Vietnamese Celebration": "A special event for students from Vietnam and Indonesia visiting for a 15-day internship program.",
+        "Vietnamese Sent-off Event": "A farewell event for our visiting students from Vietnam and Indonesia, filled with memories and performances.",
+    };
+
+    const eventDates = {
+        "Dhrona": "Feb 23, 2026",
+        "Thiran": "Feb 23, 2026",
+        "Pongal Celebration": "Jan 10, 2026",
+        "Independence Day Celebration": "Aug 15, 2025",
+        "Flashmob": "Sep 10, 2025",
+        "Freshwarites": "Sep 26, 2025",
+        "Christmas Eve": "Dec 25, 2025",
+        "Alumni Meet": "Aug 3, 2025",
+        "Vietnamese Celebration": "July 23, 2025",
+        "Vietnamese Sent-off Event": "Aug 4, 2025",
+    };
+
+    const pastEvents = [
+        "Vietnamese Celebration",
+        "Alumni Meet",
+        "Vietnamese Sent-off Event",
+    ];
+
+    const upcomingEvents = [
+        "Dhrona",
+        "Thiran",
+        "Pongal Celebration",
+        "Independence Day Celebration",
+        "Flashmob",
+        "Freshwarites",
+        "Christmas Eve",
+    ];
+
+    const EventSection = ({ title, events }) => (
+        <div className="mb-16">
+            <h2 className="text-3xl font-bold mb-8">{title}</h2>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                {events.map((event, index) => (
+                    <div
+                        key={index}
+                        className="bg-gray-800 rounded-xl shadow-lg p-6 border border-gray-700 hover:border-pink-500 hover:shadow-pink-500/40 transform hover:-translate-y-2 transition-all duration-300"
+                    >
+                        <div className="text-pink-400 text-sm mb-2">
+                            {eventDates[event]}
                         </div>
-                    ))}
-                </div>
-            ) : (
-                <h1 className='text-center mt-[300px] font-bold text-5xl text-gray-300'>No Events Yet</h1>
-            )}
+                        <h3 className="text-2xl font-semibold">{event}</h3>
+                        <p className="text-gray-400 text-sm mt-2">
+                            {eventDetails[event]}
+                        </p>
+                    </div>
+                ))}
+            </div>
         </div>
-    )
+    );
+
+    return (
+        <div className="min-h-screen bg-gradient-to-b from-purple-900 via-black to-gray-900 text-white px-6 py-12">
+            <div className="max-w-6xl mx-auto text-center">
+                <EventSection title="Upcoming Events" events={upcomingEvents} />
+                <EventSection title="Past Events" events={pastEvents} />
+            </div>
+        </div>
+    );
 }
 
-export default EventsPage
+export default EventsPage;

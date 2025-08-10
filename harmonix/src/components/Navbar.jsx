@@ -58,7 +58,7 @@ const Navbar = ({ setIsLoggedIn }) => {
               <Link to="/" className="px-3 py-2 rounded-md text-gray-100 hover:bg-indigo-600 transition-colors duration-200 font-medium">Home</Link>
               <Link to="/member" className="px-3 py-2 rounded-md text-gray-100 hover:bg-indigo-600 transition-colors duration-200 font-medium">Profile</Link>
               <Link to="/attendance" className="px-3 py-2 rounded-md text-gray-100 hover:bg-indigo-600 transition-colors duration-200 font-medium">Attendance</Link>
-              <Link to="/events" className="px-3 py-2 rounded-md text-gray-100 hover:bg-indigo-600 transition-colors duration-200 font-medium">Events</Link>
+              <Link to="/event" className="px-3 py-2 rounded-md text-gray-100 hover:bg-indigo-600 transition-colors duration-200 font-medium">Events</Link>
               <button
                 onClick={resetPassword}
                 className="px-3 py-2 rounded-md text-gray-100 hover:bg-pink-600 transition-colors duration-200 font-medium border-none bg-transparent cursor-pointer"

@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import Navbar from './components/Navbar';
 import MemberPage from './pages/MemberPage';
 import AttendancePage from './pages/AttendancePage';
+import EventPage from './pages/EventPage';
 import EventsPage from './pages/EventsPage';
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/login" element={isLoggedIn ? <Navigate to="/" /> : <LoginForm setIsLoggedIn={setIsLoggedIn} />} />
         <Route path="/attendance" element = {<AttendancePage></AttendancePage>} />
+        <Route path="/event" element = {<EventPage></EventPage>} />
         <Route path="/events" element = {<EventsPage></EventsPage>} />
         <Route
           path="/"
