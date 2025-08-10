@@ -72,7 +72,7 @@ function HomePage() {
 
       {/* Footer */}
       <footer className="bg-gray-900 py-6 text-center text-gray-400 text-sm">
-        © {new Date().getFullYear()} Harmonix | A decade of music at Our College
+        © {new Date().getFullYear()} Harmonix | SECE
       </footer>
     </div>
   );
