@@ -31,6 +31,7 @@ function App() {
         <Route path="/attendance" element = {<AttendancePage></AttendancePage>} />
         <Route path="/event" element = {<EventPage></EventPage>} />
         <Route path="/events" element = {<EventsPage></EventsPage>} />
+        <Route path="/reset-password/:uid/:token" element={<ResetPasswordPage />} />
         <Route
           path="/"
           element={
