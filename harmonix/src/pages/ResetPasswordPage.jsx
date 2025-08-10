@@ -29,7 +29,7 @@ function ResetPasswordPage() {
         placeholder="Enter new password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-        className="p-2 rounded text-black mb-4"
+        className="p-2 rounded border-white text-black mb-4"
       />
       <button 
         onClick={handleReset}
