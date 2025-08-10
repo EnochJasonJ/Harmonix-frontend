@@ -24,7 +24,7 @@ function MemberPage() {
         fetchData();
     },[])
     return (
-        <div className='w-full h-screen flex flex-col items-center justify-center'>
+        <div className='w-full min-h-screen flex flex-col py-[100px] items-center justify-center'>
             {/* <h1 className="text-3xl font-bold mb-5">Home Page</h1> */}
             <div className='flex flex-col items-center justify-center gap-5'>
                 {data && Array.isArray(data) && data.map((element, index) => (
