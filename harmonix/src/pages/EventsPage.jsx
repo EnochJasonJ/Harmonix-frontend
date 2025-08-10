@@ -66,9 +66,10 @@ function EventsPage() {
     );
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-purple-900 via-black to-gray-900 text-white px-6 py-12">
+        <div className="min-h-screen bg-gradient-to-b from-violet-900 via-slate-900 to-gray-900 text-white px-6 py-12">
             <div className="max-w-6xl mx-auto text-center">
                 <EventSection title="Upcoming Events" events={upcomingEvents} />
+                <hr className="mx-10 text-slate-700 my-10" />
                 <EventSection title="Past Events" events={pastEvents} />
             </div>
         </div>

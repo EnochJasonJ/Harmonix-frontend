@@ -73,12 +73,7 @@ const Navbar = ({ setIsLoggedIn }) => {
           ) : (
             <div className="flex gap-2">
               <Link to="/" className="px-3 py-2 rounded-md text-gray-100 hover:bg-indigo-600 transition-colors duration-200 font-medium">Home</Link>
-              <button
-                onClick={handleLogout}
-                className="px-3 py-2 rounded-md text-gray-100 hover:bg-red-600 transition-colors duration-200 font-medium border-none bg-transparent cursor-pointer"
-              >
-                Logout
-              </button>
+              <Link to="/login" className="px-3 py-2 rounded-md text-gray-100 hover:bg-indigo-600 transition-colors duration-200 font-medium">Login</Link>
             </div>
           )}
         </div>

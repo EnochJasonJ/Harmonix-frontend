@@ -53,3 +53,25 @@
 .react-calendar-heatmap .color-absent {
   fill: #f44336; /* Red */
 }
+
+/* Basic styles for 3D card flip effect */
+.perspective-1000 {
+    perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+    transform-style: preserve-3d;
+}
+
+.rotate-y-180 {
+    transform: rotateY(180deg);
+}
+
+.backface-hidden {
+    backface-visibility: hidden;
+}
+
+/* Additional utility for smooth transitions */
+.transition-transform {
+    transition: transform 0.7s;
+}
