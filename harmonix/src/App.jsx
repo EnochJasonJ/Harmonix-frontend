@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Toaster } from 'react-hot-toast';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import LoginForm from './views/LoginForm';
 import HomePage from './pages/HomePage';
@@ -36,8 +37,10 @@ function App() {
           }
         />
         <Route path="*" element={<Navigate to={isLoggedIn ? "/" : "/login"} />} />
-        <Route path='/member' />
+        <Route path='/member' element={<MemberPage />} />
       </Routes>
+      <Toaster position="top-right" reverseOrder={false} />
+      {/* This Toaster component will display toast notifications */}
     </BrowserRouter>
   );
 }

@@ -1,7 +1,7 @@
- 
 import React, { useState } from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 function LoginForm({ setIsLoggedIn }) {
     const navigate = useNavigate();
     const [username, setUsername] = useState('');
@@ -9,23 +9,28 @@ function LoginForm({ setIsLoggedIn }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        try {
-            const response = await axios.post("https://harmonix-backend.onrender.com/token/", {
+        toast.promise(
+            axios.post("https://harmonix-backend.onrender.com/token/", {
                 username,
                 password
             }, {
                 headers: { 'Content-Type': 'application/json' }
-            });
-
-            localStorage.setItem("access", response.data.access);
-            localStorage.setItem("refresh", response.data.refresh);
-
-            setIsLoggedIn(true); // Update state immediately
-            navigate("/"); // Redirect instantly
-
-        } catch (error) {
-            console.error(error);
-        }
+            }),
+            {
+                loading: 'Logging in...',
+                success: (response) => {
+                    localStorage.setItem("access", response.data.access);
+                    localStorage.setItem("refresh", response.data.refresh);
+                    setIsLoggedIn(true);
+                    setTimeout(()=>{navigate("/");},7000);
+                    return <b>Login successful!</b>;
+                },
+                error: (err) => {
+                    console.error(err);
+                    return <b>Login failed. Please check your credentials.</b>;
+                }
+            }
+        );
     };
 
 
