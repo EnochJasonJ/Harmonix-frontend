@@ -25,7 +25,7 @@ function EventsPage() {
     }, []);
     return (
         <div>
-            <h1 className='text-3xl font-bold my-5 text-center'>Events Page</h1>
+            <h1 className='text-3xl font-bold text-center'>Events Page</h1>
             {data && Array.isArray(data) && data.length > 0 ? (
                 <div className='flex flex-col items-center justify-center gap-5'>
                     {data.map((element, index) => (

@@ -10,6 +10,7 @@ import EventPage from './pages/EventPage';
 import EventsPage from './pages/EventsPage';
 import BandMembers from './pages/BandMembers';
 import ResetPasswordPage from './pages/ResetPasswordPage';
+import FeedbackForm from './pages/FeedbackForm'; // Importing the FeedbackForm component
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem("access") !== null);
@@ -32,6 +33,7 @@ function App() {
         <Route path="/attendance" element = {<AttendancePage></AttendancePage>} />
         <Route path="/event" element = {<EventPage></EventPage>} />
         <Route path="/events" element = {<EventsPage></EventsPage>} />
+        <Route path="/feedback" element = {<FeedbackForm></FeedbackForm>} />
         <Route path="/reset-password/:uid/:token" element={<ResetPasswordPage />} />
         <Route
           path="/"

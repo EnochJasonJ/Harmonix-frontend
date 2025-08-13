@@ -19,7 +19,7 @@ function BandMembers() {
 
     return (
         <div className="min-h-screen h-auto bg-gradient-to-b from-violet-800 via-slate-900  to-gray-900 text-white px-6  py-10">
-            <h1 className="text-center font-bold text-5xl mb-12">Meet our leaders</h1>
+            <h1 className="text-center font-bold text-5xl my-12">Meet our leaders</h1>
             <div className="w-full mb-20">
                 <img
                     src={Leads}
